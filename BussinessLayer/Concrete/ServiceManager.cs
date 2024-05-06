@@ -11,36 +11,36 @@ namespace BussinessLayer.Concrete
 {
     public class ServiceManager : IServiceService
     {
-        IServiceDal _serviceService;
+        IServiceDal _serviceDal;
 
         public ServiceManager(IServiceDal serviceService)
         {
-            _serviceService = serviceService;
+            _serviceDal = serviceService;
         }
 
         public List<Service> GetList()
         {
-            throw new NotImplementedException();
+            return _serviceDal.GetList();
         }
 
         public void TAdd(Service t)
         {
-            throw new NotImplementedException();
+            _serviceDal.Insert(t);
         }
 
         public void TDelete(Service t)
         {
-            throw new NotImplementedException();
+            _serviceDal.Delete(t);
         }
 
         public Service TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _serviceDal.GetById(id);
         }
 
         public void TUpdate(Service t)
         {
-            throw new NotImplementedException();
+            _serviceDal.Update(t);
         }
     }
 }

@@ -11,36 +11,36 @@ namespace BussinessLayer.Concrete
 {
     public class FeatureManager : IFeatureService
     {
-        IFeatureDal featureDal;
+        IFeatureDal _featureDal;
 
         public FeatureManager(IFeatureDal featureDal)
         {
-            this.featureDal = featureDal;
+            this._featureDal = featureDal;
         }
 
         public List<Feature> GetList()
         {
-            throw new NotImplementedException();
+            return _featureDal.GetList();
         }
 
         public void TAdd(Feature t)
         {
-            throw new NotImplementedException();
+            _featureDal.Insert(t);
         }
 
         public void TDelete(Feature t)
         {
-            throw new NotImplementedException();
+            _featureDal.Delete(t);
         }
 
         public Feature TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _featureDal.GetById(id);
         }
 
         public void TUpdate(Feature t)
         {
-            throw new NotImplementedException();
+            _featureDal.Update(t);
         }
     }
 }
