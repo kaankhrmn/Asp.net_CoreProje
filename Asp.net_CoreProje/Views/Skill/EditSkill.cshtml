@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concrete.Skill
+
+@{
+	ViewData["Title"] = "EditSkill";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@* 1. parametre action ismi
+2. parametre controller
+3. parametre form methot türü *@
+@using (Html.BeginForm("EditSkill", "Skill", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Değer</label>
+                        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

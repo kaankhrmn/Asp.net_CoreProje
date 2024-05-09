@@ -1,0 +1,73 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "EditPortfolio";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Deneyim Ekleme Sayfası</h3>
+</div>
+
+@* 1. parametre action ismi
+2. parametre controller
+3. parametre form methot türü *@
+@using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Ücret</label>
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Durum</label>
+                        @Html.TextBoxFor(x => x.State, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Tamamlanma Oranı</label>
+                        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Görsel</label>
+                        @Html.TextBoxFor(x => x.Platform, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Foto1</label>
+                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Foto2</label>
+                        @Html.TextBoxFor(x => x.Image1, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>TFoto3</label>
+                        @Html.TextBoxFor(x => x.Image2, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Foto4</label>
+                        @Html.TextBoxFor(x => x.Image3, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Foto5</label>
+                        @Html.TextBoxFor(x => x.Image4, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Proje Url</label>
+                        @Html.TextBoxFor(x => x.ProjectUrl, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Foto Url</label>
+                        @Html.TextBoxFor(x => x.ImageUrl2, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

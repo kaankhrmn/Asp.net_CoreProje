@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+    <meta name="author" content="Creative Tim">
+    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Icons -->
+    <link rel="stylesheet" href="~/argon-dashboard-master/assets/vendor/nucleo/css/nucleo.css" type="text/css">
+    <link rel="stylesheet" href="~/argon-dashboard-master/assets/vendor/fontawesome/fontawesome-free/css/all.min.css" type="text/css">
+    <!-- Page plugins -->
+    <!-- Argon CSS -->
+    <link rel="stylesheet" href="~/argon-dashboard-master/assets/css/argon.css?v=1.2.0" type="text/css">
+</head>
+
+<body>
+    <!-- Sidenav -->
+    <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+        <div class="scrollbar-inner">
+            <!-- Brand -->
+            <div class="sidenav-header  align-items-center">
+                <a class="navbar-brand" href="javascript:void(0)">
+                    <img src="~/argon-dashboard-master/assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+                </a>
+            </div>
+            
+            @await Html.PartialAsync("/Views/Admin/PartialSideBar.cshtml")
+
+        </div>
+    </nav>
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <!-- Topnav -->
+        @await Html.PartialAsync("/Views/Admin/PartialNavBar.cshtml")
+        <!-- Header -->
+        <!-- Header -->
+        @await Html.PartialAsync("/Views/Admin/NavigationPartial.cshtml")
+
+        <!-- Page content -->
+        <div class="container-fluid mt--6">
+            <div class="row">
+                <div class="col">
+                    <div class="card border-0">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <!-- Footer -->
+
+        </div>
+    </div>
+    <!-- Argon Scripts -->
+    <!-- Core -->
+    @await Html.PartialAsync("/Views/Admin/PartialScript.cshtml")
+
+</body>
+
+</html>
