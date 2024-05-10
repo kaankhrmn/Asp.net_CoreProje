@@ -1,37 +1,43 @@
 ﻿using BussinessLayer.Concrete;
+using BussinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Asp.net_CoreProje.Controllers
 {
-	public class PortfolioController : Controller
-	{
-		PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
-		public IActionResult Index()
-		{
+    public class PortfolioController : Controller
+    {
+        PortfolioManager portfolioManager = new PortfolioManager(new EfPortfolioDal());
+        public IActionResult Index()
+        {
             ViewBag.v1 = "Proje Listeleme";
             ViewBag.v2 = "Projelerim";
             ViewBag.v3 = "Proje Listeleme";
             var values = portfolioManager.GetList();
-			return View(values);
-		}
+            return View(values);
+        }
 
-		//ekleme işlemi
-		[HttpGet]
-		public IActionResult AddPortfolio()
-		{
+        //ekleme işlemi
+        [HttpGet]
+        public IActionResult AddPortfolio()
+        {
             ViewBag.v1 = "Proje Ekleme";
             ViewBag.v2 = "Projelerim";
             ViewBag.v3 = "Proje Ekleme";
             return View();
-		}
-		[HttpPost]
-		public IActionResult AddPortfolio(Portfolio portfolio)
-		{
-			portfolioManager.TAdd(portfolio);
-			return RedirectToAction("Index");
-		}
+        }
+        [HttpPost]
+        public IActionResult AddPortfolio(Portfolio portfolio)
+        {
+            //PortfolioValidator validations = new PortfolioValidator();
+            //ValidationResult result = validations.Validate(portfolio);
+
+            portfolioManager.TAdd(portfolio);
+            return RedirectToAction("Index");
+        }
 
         //silme işlemi
         public IActionResult DeletePortfolio(int id)
