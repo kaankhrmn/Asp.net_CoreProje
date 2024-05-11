@@ -1,39 +1,40 @@
 ﻿@using EntityLayer.Concrete
 @model List<Service>
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="col-lg-12 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Hizmetlerim Tablosu</h4>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Başlık</th>
-                            <th>Görsel Url</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.SeviceID</td>
-                                <td>@item.Title</td>
-                                <td>@item.ImageUrl</td>
-                                <td><a href="/Service/DeleteService" class="btn btn-outline-danger">Sil</a></td>
-                                <td><a href="/Service/EditService" class="btn btn-outline-primary">Güncelle</a></td>
-                            </tr>
-                        }
-                    </tbody>
-                    
-                </table>
-                <a href="/Service/AddService" class="btn btn-outline-success">Yeni hizmet ekle</a>
-            </div>
-        </div>
-    </div>
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Hizmetlerim Tablosu</h4>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Başlık</th>
+							<th>Görsel Url</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.SeviceID</td>
+								<td>@item.Title</td>
+								<td>@item.ImageUrl</td>
+								<td><a href="/Service/DeleteService" class="btn btn-outline-danger">Sil</a></td>
+								<td><a href="/Service/EditService" class="btn btn-outline-primary">Güncelle</a></td>
+							</tr>
+						}
+					</tbody>
+
+				</table>
+				<a href="/Service/AddService" class="btn btn-outline-success">Yeni hizmet ekle</a>
+			</div>
+		</div>
+	</div>
 </div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>

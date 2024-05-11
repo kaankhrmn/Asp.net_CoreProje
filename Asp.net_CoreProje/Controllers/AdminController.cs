@@ -24,5 +24,9 @@ namespace Asp.net_CoreProje.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult NewSideBar()
+        {
+            return PartialView();
+        }
     }
 }
