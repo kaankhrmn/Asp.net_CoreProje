@@ -6,10 +6,12 @@ namespace Asp.net_CoreProje.ViewComponents.Dashboard
 {
     public class MessageList : ViewComponent
     {
+        UserMessageManager uMessageManager = new UserMessageManager(new EfUserMessageDal());
 
         public IViewComponentResult Invoke()
         {
-            return View();
+            var values = uMessageManager.GetUserMessagesWithUserService();
+            return View(values);
         }
 
     }
