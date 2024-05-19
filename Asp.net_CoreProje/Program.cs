@@ -1,7 +1,12 @@
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<Context>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddIdentity<WriterUser,WriterRole>().AddEntityFrameworkStores<Context>();
 
 var app = builder.Build();
 
@@ -15,7 +20,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseAuthentication(); //login iþlemi için kullandým.
 app.UseRouting();
 
 app.UseAuthorization();
