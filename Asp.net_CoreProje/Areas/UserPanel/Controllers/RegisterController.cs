@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Asp.net_CoreProje.Areas.UserPanel.Controllers
 {
+        [Area("UserPanel")]
+
 	public class RegisterController : Controller
 	{
 		private readonly UserManager<WriterUser> _userManager;
@@ -14,8 +16,6 @@ namespace Asp.net_CoreProje.Areas.UserPanel.Controllers
         {
             _userManager = userManager;
         }
-
-        [Area("UserPanel")]
 
 		[HttpGet]
 		public IActionResult Index()
@@ -32,9 +32,11 @@ namespace Asp.net_CoreProje.Areas.UserPanel.Controllers
 				WriterUser w = new WriterUser()
 				{
 					Name = p.Name,
-					Email = p.Mail,
+					SurName = p.SurName,
+					Email=p.Mail,
 					UserName = p.UserName,
-					ImageUrl = p.ImageUrl
+					ImageUrl=p.ImageUrl,
+					
 				};
 
 				if (p.Password == p.ConfirmPassword)
@@ -43,7 +45,7 @@ namespace Asp.net_CoreProje.Areas.UserPanel.Controllers
 
 					if (result.Succeeded)
 					{
-						return RedirectToAction("Index", "Login");
+						return RedirectToAction("Index", "Default");
 					}
 					else
 					{

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Asp.net_CoreProje.Areas.UserPanel.Controllers
 {
 	[Area("UserPanel")]
-	//[Authorize]
+	[Authorize]
 
 	public class DefaultController : Controller
 	{

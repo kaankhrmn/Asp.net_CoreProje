@@ -12,14 +12,9 @@ namespace EntityLayer.Concrete
     {
         //burda verdiğimiz prop lar sql de user tablosunda olup AspNetUsers tablosunda olmayan başlıklardır.
         public string Name { get; set; }
-
-        public string UserName { get; set; }
+        public string SurName { get; set; }
 
         public string ImageUrl { get; set; }
-
-
-
-
 
     }
 }

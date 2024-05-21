@@ -33,7 +33,7 @@ namespace Asp.net_CoreProje.Areas.UserPanel.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.UserName,p.Password,true,true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index","Default");
+                    return RedirectToAction("Index", "Default");
                 }
                 else
                 {
